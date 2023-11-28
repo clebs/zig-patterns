@@ -47,7 +47,7 @@ test "stack gotcha" {
     try l.add(42);
 
     // When running Wrong, the assertion will fail.
-    // The value willchange after the scope of `add` is popped from the stack and something else is pushed to the stack (print statement).
+    // The value will change after the scope of `add` is popped from the stack and something else is pushed to the stack (print statement).
     // The fact that memory stays unchanged until another call is pushed to the stack makes it hard to detect.
     // If the print statement is commented out, the test will pass even if the value can change anytime.
     std.debug.print("\nMy number is: {d}\n", .{l.items.first.?.data});
