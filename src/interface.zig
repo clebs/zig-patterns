@@ -84,6 +84,9 @@ const Node = struct {
             fn update(ptr: *anyopaque) void {
                 const self: T = @ptrCast(@alignCast(ptr));
                 self.update();
+
+                // alternatively call update like this to check at compile time if it has an update method
+                // @typeInfo(T).Pointer.child.update()
             }
         };
 
